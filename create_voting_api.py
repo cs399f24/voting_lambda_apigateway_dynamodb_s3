@@ -1,6 +1,17 @@
 import boto3, json
+import sys
+
 
 client = boto3.client('apigateway', region_name='us-east-1')
+
+response = client.get_rest_apis()
+apis = response.get('items', [])
+        
+for api in apis:
+    if api.get('name') == 'VotesAPI':
+        print('API already exits')
+        sys.exit(0)
+
 
 response = client.create_rest_api(
     name='VotesAPI',
