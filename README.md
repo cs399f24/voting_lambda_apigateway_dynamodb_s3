@@ -30,17 +30,35 @@ This version of the voting system hosts the `index.html` file in an S3 bucket an
 
 ## Deploy
 
+* Create DynamoDB table
+
+  ```
+  ./create_dynamodb_table.sh
+  ```
+
+  NOTE: This will not create the table if it already exists
+  
+* (Optional) Reset votes to 0
+
+  ```
+  python reset_dynamodb_table.py
+  ```
+
 * Create the lambda function that will process `GET /results`
 
   ```
   ./create_get_results_lambda.sh
   ```
   
+  NOTE:  This will not create the function if it already exists
+  
 * Create the lambda function that will process `POST /vote`
 
   ```
   ./create_post_vote_lambda.sh
   ```
+
+  NOTE:  This will not create the function if it already exists
   
 * Create the API Gateway with the both endpoints
 
