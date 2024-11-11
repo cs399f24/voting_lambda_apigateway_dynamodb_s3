@@ -5,6 +5,29 @@ This version of the voting system hosts the `index.html` file in an S3 bucket an
 
 ![Architecture](https://i.ibb.co/cLkdGdY/architecture.png)
 
+
+## Developer Setup
+
+* Clone the repo in Cloud9
+* Create a virtual environement
+
+  ```
+  python3 -m venv .venv
+  ```
+  
+* Activate the virtual environment  
+
+  ```
+  source .venv/bin/activate
+  ```
+  
+* Install the requirements
+
+  ```
+  pip install -r requirements.txt
+  ```
+    
+
 ## Deploy
 
 * Create the lambda function that will process `GET /results`
@@ -22,7 +45,6 @@ This version of the voting system hosts the `index.html` file in an S3 bucket an
 * Create the API Gateway with the both endpoints
 
   ```
-  source .venv/bin/activiate
   python create_voting_api.py
   ```
   
