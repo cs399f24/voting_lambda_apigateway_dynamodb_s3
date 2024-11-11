@@ -96,6 +96,9 @@ This version of the voting system hosts the `index.html` file in an S3 bucket an
 * Refactor the Lambda functions
   * duplicate code to get current counts
   * Application vs. delivery mechanism (API Gateway)
+* system is hard coded for my bucket name
+* create script to make DynamoDB table (if not present)
+* change lambda runtime to python3.12
     
     
   
